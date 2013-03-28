@@ -1,23 +1,23 @@
 Attribute VB_Name = "FindBadWords"
 Public Function FindBadWords(title As String, text As String) As Integer
 Dim words(1 To 10) As String
-words(1) = "ÒÍË‰ÍË"
-words(2) = "ÎÛ˜¯ËÈ"
-words(3) = "·ÂÒÔÎ‡ÚÌÓ"
-words(4) = "‡ÍˆËˇ"
-words(5) = "‡ÒÔÓ‰‡Ê‡"
-words(6) = "ÒÍË‰Í‡"
-words(7) = "·ÂÒÔÎ‡ÚÌ˚È"
-words(8) = "ÎÛ˜¯Â"
-words(9) = "‡ÍˆËË"
-words(10) = "‡ÒÔÓ‰‡ÊË"
+words(1) = "—Å–∫–∏–¥–∫–∏"
+words(2) = "–ª—É—á—à–∏–π"
+words(3) = "–±–µ—Å–ø–ª–∞—Ç–Ω–æ"
+words(4) = "–∞–∫—Ü–∏—è"
+words(5) = "—Ä–∞—Å–ø—Ä–æ–¥–∞–∂–∞"
+words(6) = "—Å–∫–∏–¥–∫–∞"
+words(7) = "–±–µ—Å–ø–ª–∞—Ç–Ω—ã–π"
+words(8) = "–ª—É—á—à–µ"
+words(9) = "–∞–∫—Ü–∏–∏"
+words(10) = "—Ä–∞—Å–ø—Ä–æ–¥–∞–∂–∏"
 Dim i As Integer
 For i = 1 To UBound(words)
     If (InStr(1, LCase(title), words(i)) >= 0) Or (InStr(1, LCase(text), words(i)) >= 0) Then
-        FindBadWords = "»—“»Õ¿"
+        FindBadWords = "–ò–°–¢–ò–ù–ê"
         Exit Function
     End If
     
 Next i
-FindBadWords = "ÀŒ∆‹"
+FindBadWords = "–õ–û–ñ–¨"
 End Function

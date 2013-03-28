@@ -1,12 +1,12 @@
 Attribute VB_Name = "GAtags"
-' Функция AddGAtags - добавление к ссылке меток Google Analytics
-' Параметры:
-' source_url - исходная ссылка
-' utm_source - источник
-' utm_campaign - название кампании
-' utm_medium - средство кампании
-' utm_term - ключевое слово
-' utm_content - содержание кампании
+' Р¤СѓРЅРєС†РёСЏ AddGAtags - РґРѕР±Р°РІР»РµРЅРёРµ Рє СЃСЃС‹Р»РєРµ РјРµС‚РѕРє Google Analytics
+' РџР°СЂР°РјРµС‚СЂС‹:
+' source_url - РёСЃС…РѕРґРЅР°СЏ СЃСЃС‹Р»РєР°
+' utm_source - РёСЃС‚РѕС‡РЅРёРє
+' utm_campaign - РЅР°Р·РІР°РЅРёРµ РєР°РјРїР°РЅРёРё
+' utm_medium - СЃСЂРµРґСЃС‚РІРѕ РєР°РјРїР°РЅРёРё
+' utm_term - РєР»СЋС‡РµРІРѕРµ СЃР»РѕРІРѕ
+' utm_content - СЃРѕРґРµСЂР¶Р°РЅРёРµ РєР°РјРїР°РЅРёРё
 '
 ' (c) Voronin Mihail, 2011 (http://chenado.net/1163.html)
 

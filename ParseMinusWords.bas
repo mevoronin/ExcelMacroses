@@ -1,5 +1,8 @@
+' Макрос ParseMinusWords - разбиение минус-слов по строчкам
+' Входные данные - строка - в ячейке [1,1]
+' (c) Voronin Mikhail, 2011
 Attribute VB_Name = "ParseMinusWords"
-Sub ��������������������������()
+Public Sub ParseMinusWords()
 Dim str As String
 str = ActiveSheet.Cells(1, 1)
 Dim buffer As String
