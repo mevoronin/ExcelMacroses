@@ -1,3 +1,11 @@
+' Функция Translit - транслитерация значения в ячейке
+' Параметры:
+' range - ячейка с текстом для перевода
+'
+' (c) Voronin Mihail, 2011 (http://chenado.net/1131.html)
+
+
+
 Public Function Translit(ByVal txt As String) As String
 iRussianLower$ = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 iTranslit = Array("", _
