@@ -2,7 +2,7 @@
 ' Параметры:
 ' range - ячейка с гиперссылкой
 '
-' Код функции необходимо вставить в личную книгу макросов (HOWTO - https://github.com/mevoronin/ExcelMacroses/blob/master/PersonalMacrosBook.html)
+' Код функции необходимо вставить в личную книгу макросов (HOWTO - https://github.com/mevoronin/ExcelMacroses/blob/master/PersonalMacrosBook.md)
 '
 ' (c) Voronin Mihail, 2011 (http://chenado.net/1149.html)
 
