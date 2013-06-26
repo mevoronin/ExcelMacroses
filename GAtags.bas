@@ -8,7 +8,7 @@ Attribute VB_Name = "GAtags"
 ' utm_term - ключевое слово
 ' utm_content - содержание кампании
 '
-' Код функции необходимо вставить в личную книгу макросов (HOWTO - https://github.com/mevoronin/ExcelMacroses/blob/master/PersonalMacrosBook.html)
+' Код функции необходимо вставить в личную книгу макросов (HOWTO - https://github.com/mevoronin/ExcelMacroses/blob/master/PersonalMacrosBook.md)
 '
 ' (c) Voronin Mihail, 2011 (http://chenado.net/1163.html)
 
