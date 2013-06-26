@@ -17,28 +17,50 @@ Type UrlParamsParts
     paramValue As String
 End Type
 
-Public Function AddGAtags(ByVal source_url As Variant, ByVal utm_source As Variant, ByVal utm_campaign As Variant, ByVal utm_medium As Variant, Optional ByVal utm_term As Variant = "", Optional ByVal utm_content As Variant = "") As String
+Public Function AddGAtags(ByVal source_url As Variant, Optional ByVal utm_source As Variant, Optional ByVal utm_campaign As Variant, Optional ByVal utm_medium As Variant, Optional ByVal utm_term As Variant = "", Optional ByVal utm_content As Variant = "") As String
     Dim url As String, page As String, query_string As String, i As Integer
     Dim params() As UrlParamsParts
     Dim anchor As String
     Dim result As String
+    anchor = ""
     url = LCase(source_url)
     If (InStr(1, url, "?") > 0) Then
         page = Mid(url, 1, InStr(1, url, "?") - 1)
+        If InStr(1, page, "#") > 0 Then page = Mid(page, 1, InStr(1, url, "#") - 1)
         query_string = Mid(url, InStr(1, url, "?") + 1)
     Else
         page = url
     End If
-    If (InStr(1, query_string, "#") > 0) Then
-        anchor = Mid(query_string, InStr(1, query_string, "#"))
+    Dim sharpPosition As Integer
+    sharpPosition = InStr(1, query_string, "#")
+    If (sharpPosition > 0) Then
+        anchor = Mid(query_string, sharpPosition)
         query_string = Mid(query_string, 1, InStr(1, query_string, "#") - 1)
+    Else
+        sharpPosition = InStr(1, url, "#")
+        If (sharpPosition > 0) Then
+            anchor = Mid(url, sharpPosition)
+            Dim questionPosition As Integer
+            questionPosition = InStr(1, anchor, "?")
+            If (questionPosition > 0) Then
+                query_string = Mid(anchor, questionPosition + 1)
+                anchor = Mid(anchor, 1, questionPosition - 1)
+            End If
+        End If
     End If
+    
     SplitQueryString query_string, params
     
     result = page
-    If utm_source <> "" Then AddParam params, "utm_source", CStr(utm_source)
-    If utm_campaign <> "" Then AddParam params, "utm_campaign", CStr(utm_campaign)
-    If utm_medium <> "" Then AddParam params, "utm_medium", CStr(utm_medium)
+    If IsMissing(utm_source) = False Then
+        If utm_source <> "" Then AddParam params, "utm_source", CStr(utm_source)
+    End If
+    If IsMissing(utm_campaign) = False Then
+        If utm_campaign <> "" Then AddParam params, "utm_campaign", CStr(utm_campaign)
+    End If
+    If IsMissing(utm_medium) = False Then
+        If utm_medium <> "" Then AddParam params, "utm_medium", CStr(utm_medium)
+    End If
     If (UBound(params) > 0) Then
         result = result & "?"
         For i = 1 To UBound(params)
