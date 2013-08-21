@@ -63,6 +63,12 @@ Public Function AddGAtags(ByVal source_url As Variant, Optional ByVal utm_source
     If IsMissing(utm_medium) = False Then
         If utm_medium <> "" Then AddParam params, "utm_medium", CStr(utm_medium)
     End If
+    If IsMissing(utm_term) = False Then
+        If utm_term <> "" Then AddParam params, "utm_term", CStr(utm_term)
+    End If
+    If IsMissing(utm_content) = False Then
+        If utm_content <> "" Then AddParam params, "utm_content", CStr(utm_content)
+    End If
     If (UBound(params) > 0) Then
         result = result & "?"
         For i = 1 To UBound(params)
